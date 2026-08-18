@@ -132,9 +132,9 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden lg:hidden"
+            className="overflow-hidden px-1 pb-4 lg:hidden"
           >
-            <div className="mx-auto mt-2 flex max-h-[70vh] max-w-6xl flex-col gap-1 overflow-y-auto rounded-3xl border border-border bg-card p-3 shadow-2xl backdrop-blur-xl">
+            <div className="mx-auto mt-2 flex max-h-[70vh] max-w-6xl flex-col gap-1 overflow-y-auto overscroll-contain rounded-3xl border border-border bg-card p-3 shadow-2xl backdrop-blur-xl [-webkit-mask-image:-webkit-radial-gradient(white,black)]">
               {links.map((l) => (
                 <NavItem
                   key={l.id}
