@@ -212,8 +212,8 @@
   --secondary-foreground: oklch(0.28 0.09 32);
   --muted: oklch(0.95 0.02 60);
   --muted-foreground: oklch(0.5 0.06 35);
-  --accent: oklch(0.78 0.17 75);
-  --accent-foreground: oklch(0.28 0.09 32);
+  --accent: oklch(0.64 0.19 30);
+  --accent-foreground: oklch(0.99 0.005 90);
   --destructive: oklch(0.55 0.2 20);
   --destructive-foreground: oklch(0.99 0.005 90);
   --border: oklch(0.28 0.09 32 / 0.12);
@@ -223,14 +223,7 @@
   --accent-muted: oklch(0.64 0.19 30 / 0.12);
   --success: oklch(0.6 0.15 155);
 
-  --social-dribbble: oklch(0.63 0.19 356);
-  --social-twitter: oklch(0.68 0.16 240);
-  --social-twitch: oklch(0.55 0.24 296);
-  --social-facebook: oklch(0.6 0.19 255);
-  --social-instagram: oklch(0.62 0.2 20);
-  --social-github: oklch(0.35 0.02 265);
-  --social-linkedin: oklch(0.52 0.13 245);
-  --social-foreground: oklch(0.99 0.005 90);
+  /* Social brand tiles are mode-agnostic and defined once in :root. */
 
   /* Scrollbar (light mode) */
   --scrollbar-track: oklch(0.28 0.09 32 / 0.07);
