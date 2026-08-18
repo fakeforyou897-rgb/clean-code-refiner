@@ -49,7 +49,7 @@ export function SmartImage({
   }, [resolved?.src]);
 
   const gradient =
-    fallbackStyle || "linear-gradient(135deg, oklch(0.6 0.18 30), oklch(0.45 0.12 320))";
+    fallbackStyle || "var(--gradient-media)";
 
   return (
     <div className={cn("relative overflow-hidden bg-secondary/40", className)}>

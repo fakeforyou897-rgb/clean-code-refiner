@@ -41,11 +41,11 @@ function ProjectCard({ project, index = 0 }: { project: Project; index?: number 
           imgClassName="transition-transform duration-300 group-hover:scale-105"
         />
 
-        <div className="absolute inset-0 bg-black/20 transition-opacity group-hover:opacity-0" />
-        <span className="absolute left-4 top-4 rounded-full bg-black/40 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+        <div className="absolute inset-0 bg-overlay/25 transition-opacity group-hover:opacity-0" />
+        <span className="absolute left-4 top-4 rounded-full bg-overlay/50 px-3 py-1 text-xs font-semibold text-overlay-foreground backdrop-blur">
           {project.category}
         </span>
-        <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white drop-shadow">
+        <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-overlay-foreground drop-shadow">
           {project.title}
         </h3>
       </div>
@@ -69,7 +69,7 @@ function ProjectCard({ project, index = 0 }: { project: Project; index?: number 
             </span>
           )}
           {project.status && (
-            <span className="inline-block rounded-full bg-green-500/10 px-2.5 py-1 text-xs font-semibold text-green-500 border border-green-500/20">
+            <span className="inline-block rounded-full bg-success/10 px-2.5 py-1 text-xs font-semibold text-success border border-success/20">
               {project.status}
             </span>
           )}
