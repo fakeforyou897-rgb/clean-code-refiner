@@ -31,7 +31,7 @@ export function Contact({ showHeading = true }: { showHeading?: boolean } = {}) 
   };
 
   const fieldClass =
-    "w-full rounded-xl border border-border bg-secondary/40 px-4 py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-gold/60";
+    "w-full rounded-xl border border-border bg-secondary/40 px-4 py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-accent/60";
 
   return (
     <section id="contact" className="scroll-mt-24 bg-secondary/20 py-28">
@@ -75,7 +75,7 @@ export function Contact({ showHeading = true }: { showHeading?: boolean } = {}) 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-6 py-3.5 font-semibold text-gold-foreground transition-transform hover:scale-[1.01] disabled:opacity-60 glow-gold"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 font-semibold text-accent-foreground transition-transform hover:scale-[1.01] disabled:opacity-60 glow-accent"
             >
               {tr("contact.send")}
               <Send className="size-4 transition-transform group-hover:translate-x-0.5" />

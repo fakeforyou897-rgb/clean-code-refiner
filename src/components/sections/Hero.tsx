@@ -29,7 +29,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden pb-16 pt-32 sm:pt-40">
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-30" />
-      <div className="pointer-events-none absolute -left-24 top-24 size-[28rem] rounded-full bg-gold/20 blur-[120px] animate-blob" />
+      <div className="pointer-events-none absolute -left-24 top-24 size-[28rem] rounded-full bg-accent/20 blur-[120px] animate-blob" />
 
       <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-5 lg:grid-cols-2">
         <div className="relative z-10">
@@ -37,7 +37,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-5 text-[11px] font-bold uppercase tracking-[0.4em] text-gold"
+            className="mb-5 text-[11px] font-bold uppercase tracking-[0.4em] text-accent"
           >
             {tr("hero.role")}
           </motion.p>
@@ -50,7 +50,7 @@ export function Hero() {
           >
             {tr("hero.title1")}
             <br />
-            <span className="text-gold">{tr("hero.title2")}</span>
+            <span className="text-accent">{tr("hero.title2")}</span>
           </motion.h1>
 
           <motion.p
@@ -72,7 +72,7 @@ export function Hero() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 rounded-full bg-gold py-2 pl-2 pr-6 font-bold uppercase tracking-[0.14em] text-gold-foreground transition-transform duration-300 hover:scale-[1.04]"
+              className="group inline-flex items-center gap-3 rounded-full bg-accent py-2 pl-2 pr-6 font-bold uppercase tracking-[0.14em] text-accent-foreground transition-transform duration-300 hover:scale-[1.04]"
             >
               <span className="grid size-9 place-items-center rounded-full bg-foreground text-background transition-transform duration-300 group-hover:rotate-12">
                 <Play className="size-4 fill-current" />
@@ -81,7 +81,7 @@ export function Hero() {
             </a>
             <button
               onClick={downloadCV}
-              className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-gold"
+              className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
             >
               <Download className="size-4 transition-transform group-hover:-translate-y-0.5" />
               {tr("hero.downloadCv")}
@@ -118,7 +118,7 @@ export function Hero() {
               className="flex items-center gap-10 text-sm font-bold uppercase tracking-[0.3em] text-foreground/80"
             >
               {item}
-              <span className="size-2 rounded-full bg-gold" />
+              <span className="size-2 rounded-full bg-accent" />
             </span>
           ))}
         </div>

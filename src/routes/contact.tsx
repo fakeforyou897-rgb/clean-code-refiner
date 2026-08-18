@@ -52,12 +52,12 @@ function ContactPage() {
             {channels.map(({ Icon, label, value, href }, i) => (
               <Reveal key={label} delay={i * 0.07}>
                 <div className="glass h-full rounded-2xl p-6">
-                  <Icon className="size-5 text-gold" />
+                  <Icon className="size-5 text-accent" />
                   <div className="mt-4 text-[11px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
                     {label}
                   </div>
                   {href ? (
-                    <a href={href} className="mt-1 block font-semibold hover:text-gold">
+                    <a href={href} className="mt-1 block font-semibold hover:text-accent">
                       {value}
                     </a>
                   ) : (

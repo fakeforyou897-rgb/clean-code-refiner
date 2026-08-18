@@ -19,7 +19,7 @@ export function SkillsPreview() {
             <Reveal key={group.title} delay={i * 0.08}>
               <div className="glass h-full rounded-2xl p-6 transition-transform hover:-translate-y-1">
                 <h3 className="mb-4 flex items-center gap-3 text-lg font-bold">
-                  <span className="size-2 rounded-full bg-gold" />
+                  <span className="size-2 rounded-full bg-accent" />
                   {group.title}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -32,7 +32,7 @@ export function SkillsPreview() {
                     </span>
                   ))}
                   {group.skills.length > 5 && (
-                    <span className="rounded-full px-3 py-1.5 text-sm font-semibold text-gold">
+                    <span className="rounded-full px-3 py-1.5 text-sm font-semibold text-accent">
                       +{group.skills.length - 5}
                     </span>
                   )}
@@ -46,7 +46,7 @@ export function SkillsPreview() {
           <div className="mt-10 flex justify-center">
             <Link
               to="/skills"
-              className="group inline-flex items-center gap-2 rounded-full border border-gold/50 px-7 py-3.5 font-semibold text-gold transition-all hover:bg-gold/10 hover:scale-[1.03]"
+              className="group inline-flex items-center gap-2 rounded-full border border-accent/50 px-7 py-3.5 font-semibold text-accent transition-all hover:bg-accent/10 hover:scale-[1.03]"
             >
               Explore the full stack
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />

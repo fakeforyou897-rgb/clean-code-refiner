@@ -26,7 +26,7 @@ export function About() {
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.08}>
               <div className="glass rounded-2xl p-6 text-center transition-transform hover:-translate-y-1">
-                <div className="text-3xl font-extrabold text-gradient-gold">{s.value}</div>
+                <div className="text-3xl font-extrabold text-accent">{s.value}</div>
                 <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
               </div>
             </Reveal>
@@ -42,7 +42,7 @@ export function About() {
                 e.preventDefault();
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 rounded-full border border-gold/50 px-7 py-3.5 font-semibold text-gold transition-all hover:bg-gold/10 hover:scale-[1.03]"
+              className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-7 py-3.5 font-semibold text-accent transition-all hover:bg-accent/10 hover:scale-[1.03]"
             >
               {tr("about.cta")}
             </a>

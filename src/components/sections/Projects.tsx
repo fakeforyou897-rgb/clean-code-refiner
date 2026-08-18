@@ -21,7 +21,7 @@ function ProjectCard({ project, index = 0 }: { project: Project; index?: number 
     >
       {/* Image Header or Gradient Fallback */}
       <div className="mb-4 flex items-center justify-between px-3 pt-2">
-        <span className="font-display text-sm font-black text-gold">
+        <span className="font-display text-sm font-black text-accent">
           {String(index + 1).padStart(2, "0")}
         </span>
         <span className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted-foreground">
@@ -55,7 +55,7 @@ function ProjectCard({ project, index = 0 }: { project: Project; index?: number 
 
         {/* Project Type & Client Info */}
         <div className="my-4 flex flex-wrap gap-2">
-          <span className="inline-block rounded-full bg-gold/10 px-2.5 py-1 text-xs font-semibold text-gold border border-gold/20">
+          <span className="inline-block rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent border border-accent/20">
             {project.type}
           </span>
           {project.client && (
@@ -80,7 +80,7 @@ function ProjectCard({ project, index = 0 }: { project: Project; index?: number 
           <div className="my-5 grid grid-cols-3 gap-2 border-y border-border py-4">
             {project.metrics.map((m) => (
               <div key={m.label} className="text-center">
-                <div className="text-lg font-extrabold text-gradient-gold">{m.value}</div>
+                <div className="text-lg font-extrabold text-accent">{m.value}</div>
                 <div className="text-[11px] uppercase tracking-wide text-muted-foreground">
                   {m.label}
                 </div>
@@ -107,7 +107,7 @@ function ProjectCard({ project, index = 0 }: { project: Project; index?: number 
             {project.badges.map((badge) => (
               <span
                 key={badge}
-                className="rounded-md bg-gold/10 px-2 py-1 text-xs font-semibold text-gold border border-gold/30"
+                className="rounded-md bg-accent/10 px-2 py-1 text-xs font-semibold text-accent border border-accent/30"
               >
                 {badge}
               </span>
@@ -122,7 +122,7 @@ function ProjectCard({ project, index = 0 }: { project: Project; index?: number 
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:underline"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
             >
               <ExternalLink className="size-4" /> Live
             </a>
@@ -166,7 +166,7 @@ export function Projects() {
         <Reveal className="flex justify-center">
           <Link
             to="/projects"
-            className="group flex items-center gap-2.5 rounded-full bg-gold px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-gold-foreground transition-transform duration-300 hover:scale-105"
+            className="group flex items-center gap-2.5 rounded-full bg-accent px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-accent-foreground transition-transform duration-300 hover:scale-105"
           >
             View All Projects
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />

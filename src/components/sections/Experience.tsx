@@ -45,14 +45,14 @@ export function Experience({ showHeading = true }: { showHeading?: boolean } = {
           viewport={{ once: true, margin: "-100px" }}
         >
           {/* Timeline line */}
-          <div className="absolute bottom-0 left-5 top-0 w-0.5 bg-gradient-to-b from-gold via-gold/50 to-transparent sm:left-8 md:left-1/2 md:-translate-x-1/2" />
+          <div className="absolute bottom-0 left-5 top-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-transparent sm:left-8 md:left-1/2 md:-translate-x-1/2" />
 
           {experience.map((item, index) => (
             <motion.div key={item.company} className="relative" variants={itemVariants}>
               {/* Timeline dot */}
               <div className="absolute left-0 top-4 z-10 md:left-1/2 md:-translate-x-1/2">
-                <div className="flex size-11 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-gold to-gold/80 shadow-lg shadow-gold/20 sm:size-16">
-                  <Briefcase className="size-5 text-gold-foreground sm:size-7" />
+                <div className="flex size-11 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-accent to-accent/80 shadow-lg shadow-accent/20 sm:size-16">
+                  <Briefcase className="size-5 text-accent-foreground sm:size-7" />
                 </div>
               </div>
 
@@ -61,16 +61,16 @@ export function Experience({ showHeading = true }: { showHeading?: boolean } = {
                 className={`ml-14 sm:ml-24 md:w-1/2 ${index % 2 === 1 ? "md:ml-auto md:mr-0 md:pr-12" : "md:ml-0 md:pl-12"}`}
               >
                 <Reveal delay={index * 0.1}>
-                  <div className="group glass relative overflow-hidden rounded-2xl bg-gradient-to-br from-card/50 via-card to-card/30 p-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-gold/10 sm:p-6 md:p-8">
+                  <div className="group glass relative overflow-hidden rounded-2xl bg-gradient-to-br from-card/50 via-card to-card/30 p-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/10 sm:p-6 md:p-8">
                     {/* Accent corner */}
-                    <div className="absolute -right-12 -top-12 size-32 rounded-full bg-gold/5 blur-3xl transition-all duration-500 group-hover:bg-gold/10" />
+                    <div className="absolute -right-12 -top-12 size-32 rounded-full bg-accent/5 blur-3xl transition-all duration-500 group-hover:bg-accent/10" />
 
                     {/* Content */}
                     <div className="relative z-10">
                       {/* Period badge */}
-                      <div className="inline-flex items-center gap-2 rounded-full bg-gold/10 px-3 py-1.5 mb-4 border border-gold/20">
-                        <Calendar className="size-3.5 text-gold" />
-                        <span className="text-xs font-semibold uppercase tracking-wider text-gold">
+                      <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1.5 mb-4 border border-accent/20">
+                        <Calendar className="size-3.5 text-accent" />
+                        <span className="text-xs font-semibold uppercase tracking-wider text-accent">
                           {item.period}
                         </span>
                       </div>
@@ -82,12 +82,12 @@ export function Experience({ showHeading = true }: { showHeading?: boolean } = {
 
                       {/* Company */}
                       <div className="mt-2 flex items-center gap-2">
-                        <div className="h-1 w-1 rounded-full bg-gold" />
-                        <p className="text-sm font-semibold text-gold">{item.company}</p>
+                        <div className="h-1 w-1 rounded-full bg-accent" />
+                        <p className="text-sm font-semibold text-accent">{item.company}</p>
                       </div>
 
                       {/* Divider */}
-                      <div className="my-5 h-px bg-gradient-to-r from-border via-gold/20 to-transparent" />
+                      <div className="my-5 h-px bg-gradient-to-r from-border via-accent/20 to-transparent" />
 
                       {/* Achievement points */}
                       <ul className="space-y-3">
@@ -101,7 +101,7 @@ export function Experience({ showHeading = true }: { showHeading?: boolean } = {
                             viewport={{ once: true }}
                           >
                             <div className="mt-1.5 shrink-0">
-                              <ChevronRight className="size-4 text-gold/60 transition-all duration-300 group-hover/item:text-gold group-hover/item:translate-x-0.5" />
+                              <ChevronRight className="size-4 text-accent/60 transition-all duration-300 group-hover/item:text-accent group-hover/item:translate-x-0.5" />
                             </div>
                             <span className="transition-colors duration-300 group-hover/item:text-foreground">
                               {point}
@@ -111,7 +111,7 @@ export function Experience({ showHeading = true }: { showHeading?: boolean } = {
                       </ul>
 
                       {/* Hover indicator */}
-                      <div className="absolute -right-1 top-1/2 h-12 w-1 -translate-y-1/2 bg-gradient-to-b from-transparent via-gold to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="absolute -right-1 top-1/2 h-12 w-1 -translate-y-1/2 bg-gradient-to-b from-transparent via-accent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </div>
                   </div>
                 </Reveal>
@@ -127,8 +127,8 @@ export function Experience({ showHeading = true }: { showHeading?: boolean } = {
             transition={{ delay: experience.length * 0.2, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="flex size-11 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-gold/20 to-gold/10 sm:size-16">
-              <div className="size-3 rounded-full bg-gold" />
+            <div className="flex size-11 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-accent/20 to-accent/10 sm:size-16">
+              <div className="size-3 rounded-full bg-accent" />
             </div>
           </motion.div>
         </motion.div>
@@ -148,9 +148,9 @@ export function Experience({ showHeading = true }: { showHeading?: boolean } = {
           ].map((stat) => (
             <div
               key={stat.labelKey}
-              className="glass rounded-xl border border-gold/10 bg-gradient-to-br from-card/40 to-card/20 px-2 py-5 text-center sm:px-4 sm:py-6 md:px-6 md:py-8"
+              className="glass rounded-xl border border-accent/10 bg-gradient-to-br from-card/40 to-card/20 px-2 py-5 text-center sm:px-4 sm:py-6 md:px-6 md:py-8"
             >
-              <p className="text-xl font-bold text-gold sm:text-2xl md:text-3xl">{stat.value}</p>
+              <p className="text-xl font-bold text-accent sm:text-2xl md:text-3xl">{stat.value}</p>
               <p className="mt-1 break-words text-[10px] uppercase tracking-wide text-muted-foreground sm:text-xs sm:tracking-wider md:text-sm">
                 {tr(stat.labelKey)}
               </p>

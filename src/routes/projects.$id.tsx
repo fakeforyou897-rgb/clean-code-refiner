@@ -37,7 +37,7 @@ export function ProjectDetail() {
         <Navbar />
         <div className="flex-1 flex flex-col items-center justify-center py-32">
           <h1 className="text-3xl font-bold mb-4">Project not found</h1>
-          <Link to="/projects" className="text-gold hover:underline flex items-center gap-2">
+          <Link to="/projects" className="text-accent hover:underline flex items-center gap-2">
             <ArrowLeft className="size-4" />
             Back to Projects
           </Link>
@@ -107,14 +107,14 @@ export function ProjectDetail() {
                 )}
                 <div className="glass rounded-xl p-4 border border-border">
                   <div className="flex items-center gap-2 mb-1">
-                    <Code2 className="size-3.5 text-gold" />
+                    <Code2 className="size-3.5 text-accent" />
                     <div className="text-xs font-semibold text-muted-foreground">TECH STACK</div>
                   </div>
                   <div className="text-lg font-semibold">{project.tech.length} Tools</div>
                 </div>
                 <div className="glass rounded-xl p-4 border border-border">
                   <div className="flex items-center gap-2 mb-1">
-                    <ExternalLink className="size-3.5 text-gold" />
+                    <ExternalLink className="size-3.5 text-accent" />
                     <div className="text-xs font-semibold text-muted-foreground">STATUS</div>
                   </div>
                   <div className="text-lg font-semibold">{hasLiveSite ? "Live" : "Archived"}</div>
@@ -128,7 +128,7 @@ export function ProjectDetail() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-lg bg-gold text-background px-6 py-3 font-semibold transition-all hover:shadow-lg hover:shadow-gold/50 hover:-translate-y-0.5"
+                    className="flex items-center gap-2 rounded-lg bg-accent text-background px-6 py-3 font-semibold transition-all hover:shadow-lg hover:shadow-accent/50 hover:-translate-y-0.5"
                   >
                     <ExternalLink className="size-4" />
                     Visit Live Site
@@ -139,7 +139,7 @@ export function ProjectDetail() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-lg border border-border bg-secondary/40 px-6 py-3 font-semibold transition-all hover:border-gold/50 hover:text-gold"
+                    className="flex items-center gap-2 rounded-lg border border-border bg-secondary/40 px-6 py-3 font-semibold transition-all hover:border-accent/50 hover:text-accent"
                   >
                     <Github className="size-4" />
                     View Source Code
@@ -157,12 +157,12 @@ export function ProjectDetail() {
                     <Link
                       to="/projects/$id"
                       params={{ id: prevProject.id }}
-                      className="group glass rounded-xl border border-border p-6 transition-all hover:border-gold/50 hover:glow-gold"
+                      className="group glass rounded-xl border border-border p-6 transition-all hover:border-accent/50 hover:glow-accent"
                     >
                       <div className="text-xs font-semibold text-muted-foreground mb-2">
                         ← PREVIOUS PROJECT
                       </div>
-                      <h3 className="text-lg font-bold group-hover:text-gold transition-colors">
+                      <h3 className="text-lg font-bold group-hover:text-accent transition-colors">
                         {prevProject.title}
                       </h3>
                     </Link>
@@ -173,12 +173,12 @@ export function ProjectDetail() {
                     <Link
                       to="/projects/$id"
                       params={{ id: nextProject.id }}
-                      className="group glass rounded-xl border border-border p-6 transition-all hover:border-gold/50 hover:glow-gold text-right sm:text-left"
+                      className="group glass rounded-xl border border-border p-6 transition-all hover:border-accent/50 hover:glow-accent text-right sm:text-left"
                     >
                       <div className="text-xs font-semibold text-muted-foreground mb-2">
                         NEXT PROJECT →
                       </div>
-                      <h3 className="text-lg font-bold group-hover:text-gold transition-colors">
+                      <h3 className="text-lg font-bold group-hover:text-accent transition-colors">
                         {nextProject.title}
                       </h3>
                     </Link>

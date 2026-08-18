@@ -88,14 +88,14 @@ export function Footer() {
               <Link
                 key={item.label}
                 to={item.to}
-                className="text-xs font-bold uppercase tracking-[0.18em] text-foreground transition-colors hover:text-gold"
+                className="text-xs font-bold uppercase tracking-[0.18em] text-foreground transition-colors hover:text-accent"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <p className="text-right text-[10px] font-bold uppercase leading-[1.6] tracking-[0.22em] text-gold">
+          <p className="text-right text-[10px] font-bold uppercase leading-[1.6] tracking-[0.22em] text-accent">
             {new Date().getFullYear()} | Copyright
             <br />
             All rights reserved

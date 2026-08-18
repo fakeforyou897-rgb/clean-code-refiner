@@ -51,7 +51,7 @@ function SkillsPage() {
                 <div className="glass h-full rounded-2xl p-7 transition-transform hover:-translate-y-1">
                   <div className="mb-5 flex items-baseline justify-between gap-3">
                     <h2 className="flex items-center gap-3 text-xl font-bold">
-                      <span className="size-2 rounded-full bg-gold" />
+                      <span className="size-2 rounded-full bg-accent" />
                       {group.title}
                     </h2>
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
@@ -62,7 +62,7 @@ function SkillsPage() {
                     {group.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-full border border-border bg-background/40 px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:border-gold/50 hover:text-gold"
+                        className="rounded-full border border-border bg-background/40 px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:border-accent/50 hover:text-accent"
                       >
                         {skill}
                       </span>
@@ -77,14 +77,14 @@ function SkillsPage() {
             <div className="mx-auto mt-14 flex max-w-5xl flex-wrap gap-3">
               <Link
                 to="/projects"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-gold/50 hover:text-gold"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-accent/50 hover:text-accent"
               >
                 See it applied in projects
                 <ArrowRight className="size-4" />
               </Link>
               <Link
                 to="/experience"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-gold/50 hover:text-gold"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-accent/50 hover:text-accent"
               >
                 Experience timeline
                 <ArrowRight className="size-4" />

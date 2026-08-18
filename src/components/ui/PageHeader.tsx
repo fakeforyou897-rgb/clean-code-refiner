@@ -17,7 +17,7 @@ export function PageHeader({
         <Reveal>
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-gold"
+            className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-accent"
           >
             <ChevronLeft className="size-4" />
             Back home
@@ -25,7 +25,7 @@ export function PageHeader({
         </Reveal>
         <Reveal delay={0.05}>
           {kicker && (
-            <span className="mt-8 inline-block text-[11px] font-bold uppercase tracking-[0.35em] text-gold">
+            <span className="mt-8 inline-block text-[11px] font-bold uppercase tracking-[0.35em] text-accent">
               {kicker}
             </span>
           )}
@@ -37,7 +37,7 @@ export function PageHeader({
               {subtitle}
             </p>
           )}
-          <div className="mt-8 h-1.5 w-16 rounded-full bg-gold" />
+          <div className="mt-8 h-1.5 w-16 rounded-full bg-accent" />
         </Reveal>
       </div>
     </section>

@@ -112,7 +112,7 @@ export function ProjectsPage() {
           <div className="mx-auto max-w-6xl px-5">
             <Reveal>
               <header className="mb-10 max-w-2xl">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                   Portfolio
                 </span>
                 <h1 className="mt-3 break-words text-3xl font-bold sm:text-4xl md:text-5xl">All Projects</h1>
@@ -137,14 +137,14 @@ export function ProjectsPage() {
                     placeholder="Search by name, tech, client…"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="h-11 w-full rounded-xl border border-border bg-secondary/40 pl-10 pr-9 text-sm text-foreground transition-all placeholder:text-muted-foreground focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
+                    className="h-11 w-full rounded-xl border border-border bg-secondary/40 pl-10 pr-9 text-sm text-foreground transition-all placeholder:text-muted-foreground focus:border-accent/50 focus:outline-none focus:ring-1 focus:ring-accent/50"
                   />
                   {searchQuery && (
                     <button
                       type="button"
                       onClick={() => setSearchQuery("")}
                       aria-label="Clear search"
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-lg p-1 text-muted-foreground transition-colors hover:text-gold"
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-lg p-1 text-muted-foreground transition-colors hover:text-accent"
                     >
                       <X className="size-4" />
                     </button>
@@ -159,7 +159,7 @@ export function ProjectsPage() {
                     <SelectTrigger
                       id="project-sort"
                       aria-label="Sort projects"
-                      className="h-11 w-full gap-2 rounded-xl border-border bg-secondary/40 px-3.5 text-sm font-medium text-foreground shadow-none transition-all hover:border-gold/40 focus:border-gold/50 focus:ring-1 focus:ring-gold/50 data-[state=open]:border-gold/50 md:w-48"
+                      className="h-11 w-full gap-2 rounded-xl border-border bg-secondary/40 px-3.5 text-sm font-medium text-foreground shadow-none transition-all hover:border-accent/40 focus:border-accent/50 focus:ring-1 focus:ring-accent/50 data-[state=open]:border-accent/50 md:w-48"
                     >
                       <div className="flex min-w-0 flex-1 items-center gap-2 whitespace-nowrap text-left">
                         <ArrowUpDown className="size-4 shrink-0 text-muted-foreground" />
@@ -171,7 +171,7 @@ export function ProjectsPage() {
                         <SelectItem
                           key={s.value}
                           value={s.value}
-                          className="cursor-pointer rounded-lg text-sm focus:bg-gold/10 focus:text-gold"
+                          className="cursor-pointer rounded-lg text-sm focus:bg-accent/10 focus:text-accent"
                         >
                           {s.label}
                         </SelectItem>
@@ -212,8 +212,8 @@ export function ProjectsPage() {
                   aria-pressed={filter === f}
                   className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
                     filter === f
-                      ? "bg-gold text-gold-foreground"
-                      : "border border-border bg-secondary/40 text-muted-foreground hover:border-gold/50 hover:text-gold"
+                      ? "bg-accent text-accent-foreground"
+                      : "border border-border bg-secondary/40 text-muted-foreground hover:border-accent/50 hover:text-accent"
                   }`}
                 >
                   {f}
@@ -237,7 +237,7 @@ export function ProjectsPage() {
                     setSearchQuery("");
                     setSort("default");
                   }}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 font-semibold transition-colors hover:border-gold/50 hover:text-gold"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 font-semibold transition-colors hover:border-accent/50 hover:text-accent"
                 >
                   <X className="size-3.5" />
                   Reset
@@ -272,7 +272,7 @@ export function ProjectsPage() {
                     <button
                       onClick={() => setCurrentPage(Math.max(1, page - 1))}
                       disabled={page === 1}
-                      className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-sm font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-gold/50 hover:enabled:text-gold"
+                      className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-sm font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-accent/50 hover:enabled:text-accent"
                     >
                       <ChevronLeft className="size-4" />
                       Previous
@@ -286,8 +286,8 @@ export function ProjectsPage() {
                           aria-current={p === page ? "page" : undefined}
                           className={`size-10 rounded-xl text-sm font-semibold transition-all ${
                             p === page
-                              ? "bg-gold text-gold-foreground"
-                              : "border border-border bg-secondary/40 text-muted-foreground hover:border-gold/50 hover:text-gold"
+                              ? "bg-accent text-accent-foreground"
+                              : "border border-border bg-secondary/40 text-muted-foreground hover:border-accent/50 hover:text-accent"
                           }`}
                         >
                           {p}
@@ -298,7 +298,7 @@ export function ProjectsPage() {
                     <button
                       onClick={() => setCurrentPage(Math.min(totalPages, page + 1))}
                       disabled={page === totalPages}
-                      className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-sm font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-gold/50 hover:enabled:text-gold"
+                      className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-sm font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-accent/50 hover:enabled:text-accent"
                     >
                       Next
                       <ChevronRight className="size-4" />
@@ -336,7 +336,7 @@ function ViewButton({
       aria-label={label}
       title={label}
       className={`inline-flex size-9 items-center justify-center rounded-lg transition-all ${
-        active ? "bg-gold text-gold-foreground" : "text-muted-foreground hover:text-gold"
+        active ? "bg-accent text-accent-foreground" : "text-muted-foreground hover:text-accent"
       }`}
     >
       {children}

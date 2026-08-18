@@ -8,7 +8,7 @@ export function ContactCta() {
       <div className="mx-auto max-w-4xl px-5">
         <Reveal>
           <div className="glass rounded-[2rem] px-8 py-14 text-center md:px-14">
-            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.35em] text-gold">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.35em] text-accent">
               Available for new work
             </span>
             <h2 className="mt-5 font-display text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl">
@@ -22,14 +22,14 @@ export function ContactCta() {
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 font-semibold text-gold-foreground transition-transform hover:scale-[1.03] glow-gold"
+                className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-accent-foreground transition-transform hover:scale-[1.03] glow-accent"
               >
                 Start a conversation
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <a
                 href="mailto:hello@example.com"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-semibold transition-colors hover:border-gold/50 hover:text-gold"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-semibold transition-colors hover:border-accent/50 hover:text-accent"
               >
                 <Mail className="size-4" />
                 Email directly

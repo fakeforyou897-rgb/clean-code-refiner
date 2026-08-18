@@ -14,14 +14,14 @@ export function Skills() {
             <Reveal key={group.title} delay={i * 0.08}>
               <div className="glass h-full rounded-2xl p-7 transition-transform hover:-translate-y-1">
                 <h3 className="mb-5 flex items-center gap-3 text-xl font-bold">
-                  <span className="size-2 rounded-full bg-gold" />
+                  <span className="size-2 rounded-full bg-accent" />
                   {group.title}
                 </h3>
                 <div className="flex flex-wrap gap-2.5">
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-border bg-background/40 px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:border-gold/50 hover:text-gold"
+                      className="rounded-full border border-border bg-background/40 px-3.5 py-1.5 text-sm text-muted-foreground transition-colors hover:border-accent/50 hover:text-accent"
                     >
                       {skill}
                     </span>

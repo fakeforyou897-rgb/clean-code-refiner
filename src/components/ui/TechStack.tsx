@@ -11,7 +11,7 @@ export function TechStack({ techs, variant = "grid", className = "" }: TechStack
         {techs.map((tech) => (
           <span
             key={tech}
-            className="rounded-lg bg-background px-4 py-2 text-sm font-semibold text-gold border border-gold/20"
+            className="rounded-lg bg-background px-4 py-2 text-sm font-semibold text-accent border border-accent/20"
           >
             {tech}
           </span>
@@ -27,7 +27,7 @@ export function TechStack({ techs, variant = "grid", className = "" }: TechStack
         {techs.map((tech) => (
           <span
             key={tech}
-            className="rounded-lg bg-background px-4 py-2 text-sm font-semibold text-gold border border-gold/20"
+            className="rounded-lg bg-background px-4 py-2 text-sm font-semibold text-accent border border-accent/20"
           >
             {tech}
           </span>

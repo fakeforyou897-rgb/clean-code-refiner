@@ -52,14 +52,14 @@ function ExperiencePage() {
             <div className="mx-auto flex max-w-5xl flex-wrap gap-3">
               <Link
                 to="/projects"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-gold/50 hover:text-gold"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-accent/50 hover:text-accent"
               >
                 See the work
                 <ArrowRight className="size-4" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-semibold text-gold-foreground transition-transform hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-accent-foreground transition-transform hover:scale-[1.02]"
               >
                 Work with me
                 <ArrowRight className="size-4" />

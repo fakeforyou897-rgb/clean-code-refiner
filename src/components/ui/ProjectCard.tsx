@@ -23,7 +23,7 @@ export function ProjectCard({ project, index, view = "grid" }: ProjectCardProps)
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.35, delay: Math.min(index, 6) * 0.04 }}
-      className="group glass relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/40 hover:glow-gold"
+      className="group glass relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:glow-accent"
     >
       <ProjectCardImage project={project} priority={index < 3} />
 
@@ -53,7 +53,7 @@ export function ProjectCard({ project, index, view = "grid" }: ProjectCardProps)
           <Link
             to="/projects/$id"
             params={{ id: project.id }}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-all hover:gap-3"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-all hover:gap-3"
           >
             View details
             <ArrowRight className="size-4" />
@@ -84,7 +84,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.3, delay: Math.min(index, 6) * 0.03 }}
-      className="group glass grid grid-cols-1 gap-5 overflow-hidden rounded-3xl border border-border/60 p-4 transition-all duration-300 hover:border-gold/40 sm:grid-cols-[220px_minmax(0,1fr)] sm:items-center"
+      className="group glass grid grid-cols-1 gap-5 overflow-hidden rounded-3xl border border-border/60 p-4 transition-all duration-300 hover:border-accent/40 sm:grid-cols-[220px_minmax(0,1fr)] sm:items-center"
     >
       <div className="overflow-hidden rounded-2xl">
         <ProjectCardImage project={project} compact priority={index < 2} />
@@ -103,7 +103,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
           <Link
             to="/projects/$id"
             params={{ id: project.id }}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-all hover:gap-3"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-all hover:gap-3"
           >
             View details
             <ArrowRight className="size-4" />
@@ -139,7 +139,7 @@ function IconLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex size-9 items-center justify-center rounded-xl border border-border bg-secondary/40 text-muted-foreground transition-all hover:border-gold/50 hover:text-gold"
+      className="inline-flex size-9 items-center justify-center rounded-xl border border-border bg-secondary/40 text-muted-foreground transition-all hover:border-accent/50 hover:text-accent"
     >
       {children}
     </a>
@@ -154,7 +154,7 @@ interface BadgeProps {
 export function Badge({ children, variant = "gold" }: BadgeProps) {
   const variantClass =
     variant === "gold"
-      ? "bg-gold/10 text-gold border-gold/20"
+      ? "bg-accent/10 text-accent border-accent/20"
       : "bg-accent/10 text-accent border-accent/20";
 
   return (
@@ -216,7 +216,7 @@ export function TechStackPreview({ techs, limit = 3 }: TechStackPreviewProps) {
         </span>
       ))}
       {techs.length > limit && (
-        <span className="rounded-md border border-gold/20 bg-background/50 px-2 py-1 text-xs text-gold">
+        <span className="rounded-md border border-accent/20 bg-background/50 px-2 py-1 text-xs text-accent">
           +{techs.length - limit}
         </span>
       )}

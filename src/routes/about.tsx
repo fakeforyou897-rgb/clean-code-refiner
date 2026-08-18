@@ -71,7 +71,7 @@ function AboutPage() {
             {stats.map((s, i) => (
               <Reveal key={s.label} delay={i * 0.07}>
                 <div className="glass rounded-2xl p-6 text-center transition-transform hover:-translate-y-1">
-                  <div className="text-3xl font-extrabold text-gradient-gold">{s.value}</div>
+                  <div className="text-3xl font-extrabold text-accent">{s.value}</div>
                   <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
                 </div>
               </Reveal>
@@ -91,7 +91,7 @@ function AboutPage() {
                 <Reveal key={p.title} delay={i * 0.07}>
                   <div className="glass h-full rounded-2xl p-7">
                     <h3 className="flex items-center gap-3 text-lg font-bold">
-                      <span className="size-2 rounded-full bg-gold" />
+                      <span className="size-2 rounded-full bg-accent" />
                       {p.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
@@ -104,21 +104,21 @@ function AboutPage() {
               <div className="mt-12 flex flex-wrap gap-3">
                 <Link
                   to="/skills"
-                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-gold/50 hover:text-gold"
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-accent/50 hover:text-accent"
                 >
                   Skills & tooling
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
                   to="/experience"
-                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-gold/50 hover:text-gold"
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-accent/50 hover:text-accent"
                 >
                   Experience timeline
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-semibold text-gold-foreground transition-transform hover:scale-[1.02]"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-accent-foreground transition-transform hover:scale-[1.02]"
                 >
                   {tr("about.cta")}
                   <ArrowRight className="size-4" />
