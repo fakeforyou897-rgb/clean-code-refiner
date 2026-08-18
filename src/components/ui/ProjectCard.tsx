@@ -148,23 +148,16 @@ function IconLink({
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: "gold" | "accent";
 }
 
-export function Badge({ children, variant = "gold" }: BadgeProps) {
-  const variantClass =
-    variant === "gold"
-      ? "bg-accent/10 text-accent border-accent/20"
-      : "bg-accent/10 text-accent border-accent/20";
-
+export function Badge({ children }: BadgeProps) {
   return (
-    <span
-      className={`inline-block rounded-full px-2.5 py-1 text-xs font-semibold border ${variantClass}`}
-    >
+    <span className="inline-block rounded-full border border-accent/20 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent">
       {children}
     </span>
   );
 }
+
 
 interface ProjectCardImageProps {
   project: Project;
