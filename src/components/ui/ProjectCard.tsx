@@ -43,8 +43,8 @@ export function ProjectCard({ project, index, view = "grid" }: ProjectCardProps)
         </header>
 
         <div className="flex flex-wrap gap-2">
-          <Badge variant="gold">{project.type}</Badge>
-          {project.client && <Badge variant="accent">{project.client}</Badge>}
+          <Badge>{project.type}</Badge>
+          {project.client && <Badge>{project.client}</Badge>}
         </div>
 
         <TechStackPreview techs={project.tech} />
@@ -92,8 +92,8 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">
           <h3 className="text-lg font-bold">{project.title}</h3>
-          <Badge variant="gold">{project.type}</Badge>
-          {project.client && <Badge variant="accent">{project.client}</Badge>}
+          <Badge>{project.type}</Badge>
+          {project.client && <Badge>{project.client}</Badge>}
         </div>
         <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{project.description}</p>
         <div className="mt-3">

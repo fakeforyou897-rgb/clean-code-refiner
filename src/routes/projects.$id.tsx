@@ -85,7 +85,7 @@ export function ProjectDetail() {
                 <div className="mb-4 flex flex-wrap gap-2">
                   <Badge>{project.category}</Badge>
                   <Badge>{project.type}</Badge>
-                  {project.status && <Badge variant="accent">{project.status}</Badge>}
+                  {project.status && <Badge>{project.status}</Badge>}
                 </div>
                 <h1 className="mb-4 break-words text-3xl font-bold sm:text-4xl md:text-5xl">{project.title}</h1>
                 <p className="text-lg text-muted-foreground">{project.description}</p>
