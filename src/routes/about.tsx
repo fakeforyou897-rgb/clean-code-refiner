@@ -104,14 +104,14 @@ function AboutPage() {
               <div className="mt-12 flex flex-wrap gap-3">
                 <Link
                   to="/skills"
-                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-accent/50 hover:text-accent"
+                  className="pill-outline"
                 >
                   Skills & tooling
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
                   to="/experience"
-                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-semibold transition-colors hover:border-accent/50 hover:text-accent"
+                  className="pill-outline"
                 >
                   Experience timeline
                   <ArrowRight className="size-4" />

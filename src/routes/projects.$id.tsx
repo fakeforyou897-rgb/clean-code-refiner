@@ -94,25 +94,25 @@ export function ProjectDetail() {
               {/* Meta Info Grid */}
               <div className="mb-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {project.client && (
-                  <div className="glass rounded-xl p-4 border border-border">
+                  <div className="panel">
                     <div className="text-xs font-semibold text-muted-foreground mb-1">CLIENT</div>
                     <div className="text-lg font-semibold">{project.client}</div>
                   </div>
                 )}
                 {project.database && (
-                  <div className="glass rounded-xl p-4 border border-border">
+                  <div className="panel">
                     <div className="text-xs font-semibold text-muted-foreground mb-1">DATABASE</div>
                     <div className="text-lg font-semibold">{project.database}</div>
                   </div>
                 )}
-                <div className="glass rounded-xl p-4 border border-border">
+                <div className="panel">
                   <div className="flex items-center gap-2 mb-1">
                     <Code2 className="size-3.5 text-accent" />
                     <div className="text-xs font-semibold text-muted-foreground">TECH STACK</div>
                   </div>
                   <div className="text-lg font-semibold">{project.tech.length} Tools</div>
                 </div>
-                <div className="glass rounded-xl p-4 border border-border">
+                <div className="panel">
                   <div className="flex items-center gap-2 mb-1">
                     <ExternalLink className="size-3.5 text-accent" />
                     <div className="text-xs font-semibold text-muted-foreground">STATUS</div>

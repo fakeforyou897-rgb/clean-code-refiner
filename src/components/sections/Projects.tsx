@@ -55,11 +55,11 @@ function ProjectCard({ project, index = 0 }: { project: Project; index?: number 
 
         {/* Project Type & Client Info */}
         <div className="my-4 flex flex-wrap gap-2">
-          <span className="inline-block rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent border border-accent/20">
+          <span className="chip">
             {project.type}
           </span>
           {project.client && (
-            <span className="inline-block rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent border border-accent/20">
+            <span className="chip">
               {project.client}
             </span>
           )}
