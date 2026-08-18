@@ -127,9 +127,50 @@
   border: 1px solid var(--border);
 }
 
+/* Glass surface with the standard inner padding used across detail pages. */
+@utility panel {
+  background: color-mix(in oklab, var(--card) 88%, transparent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+/* Small status/meta label. Single source of truth for every chip. */
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--accent) 20%, transparent);
+  background: color-mix(in oklab, var(--accent) 10%, transparent);
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Outlined interactive pill used by filters, tag links and secondary CTAs. */
+@utility pill-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+  &:hover {
+    border-color: color-mix(in oklab, var(--accent) 50%, transparent);
+    color: var(--accent);
+  }
+}
+
 @utility glow-accent {
   box-shadow: var(--shadow-glow);
 }
+
 
 @utility grid-bg {
   background-image: radial-gradient(
