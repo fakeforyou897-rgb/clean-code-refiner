@@ -110,7 +110,7 @@ export function ExperiencePreview() {
                   <Icon className="size-3.5" />
                   {tr(`events.tab.${id}`)}
                   <span
-                    className={`rounded-md px-1.5 py-0.5 text-[10px] ${
+                    className={`rounded-md px-1.5 py-0.5 text-3xs font-bold ${
                       active ? "bg-background/20" : "bg-foreground/10"
                     }`}
                   >
@@ -243,7 +243,7 @@ export function ExperiencePreview() {
                             )}
                             {item.status && (
                               <span
-                                className={`rounded-md px-2 py-0.5 text-[10px] uppercase tracking-wider ${
+                                className={`rounded-md px-2 py-0.5 type-micro ${
                                   featured ? "bg-background/20" : "bg-primary/10 text-primary"
                                 }`}
                               >
@@ -284,7 +284,7 @@ export function ExperiencePreview() {
                               <span
                                 key={tech}
                                 dir="ltr"
-                                className={`rounded-lg px-2.5 py-1 text-[11px] font-bold ${
+                                className={`rounded-lg px-2.5 py-1 text-2xs font-bold ${
                                   featured
                                     ? "bg-background/15"
                                     : "bg-foreground/5 border border-border"
