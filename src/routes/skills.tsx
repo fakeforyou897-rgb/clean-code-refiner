@@ -58,7 +58,7 @@ function SkillsPage() {
                   <div className="grid size-10 place-items-center rounded-xl border border-border bg-foreground/10 text-primary">
                     <Icon className="size-5" />
                   </div>
-                  <h2 className="font-['Oswald',sans-serif] text-2xl font-bold text-card-foreground">
+                  <h2 className="type-h3 text-card-foreground">
                     {skillGroupTitle(title)}
                   </h2>
                 </div>
@@ -68,7 +68,7 @@ function SkillsPage() {
                     <span
                       key={skill}
                       dir="ltr"
-                      className="rounded-xl border border-border bg-foreground/10 px-4 py-1.5 font-sans text-xs font-bold text-card-foreground shadow-sm"
+                      className="rounded-xl border border-border bg-foreground/10 px-4 py-1.5 type-body font-semibold text-card-foreground shadow-sm"
                     >
                       {skill}
                     </span>

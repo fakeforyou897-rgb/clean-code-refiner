@@ -105,19 +105,19 @@ export function WelcomeModal() {
 
           <h2
             id="welcome-modal-title"
-            className="mt-5 text-3xl font-black leading-tight tracking-tight text-foreground sm:text-4xl"
+            className="mt-5 type-h2 text-foreground"
           >
             {tr("welcome.title")}
           </h2>
 
           <p
             id="welcome-modal-body"
-            className="mt-4 text-base leading-relaxed text-muted-foreground"
+            className="mt-4 type-lead text-muted-foreground"
           >
             {tr("welcome.body")}
           </p>
 
-          <p className="mt-4 text-sm font-semibold text-accent">{tr("welcome.highlight")}</p>
+          <p className="mt-4 type-body font-semibold text-accent">{tr("welcome.highlight")}</p>
 
           <div className="mt-8 grid grid-cols-1 gap-3">
             <Link

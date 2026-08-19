@@ -26,7 +26,7 @@ export function ProjectArchitecture({
             </div>
             <ul className="space-y-4">
               {detail.architecture.map((note) => (
-                <li key={note} className="type-body flex gap-3 leading-relaxed text-foreground/70">
+                <li key={note} className="type-body flex gap-3 text-foreground/70">
                   <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
                   <span>{note}</span>
                 </li>
@@ -49,7 +49,7 @@ export function ProjectResponsibilities({ detail }: { detail: ProjectDetailConte
         {detail.responsibilities.map((item) => (
           <li
             key={item}
-            className="type-body flex gap-3 rounded-xl border border-border bg-card p-5 leading-relaxed text-foreground/70"
+            className="type-body flex gap-3 rounded-xl border border-border bg-card p-5 text-foreground/70"
           >
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>{item}</span>
@@ -75,7 +75,7 @@ export function ProjectProcess({ detail }: { detail: ProjectDetailContent }) {
             <h3 className="type-h4 mb-2 text-foreground">
               {step.title}
             </h3>
-            <p className="type-body leading-relaxed text-foreground/60">{step.description}</p>
+            <p className="type-body text-foreground/60">{step.description}</p>
           </li>
         ))}
       </ol>

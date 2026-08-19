@@ -14,7 +14,7 @@ export function ProjectOverview({ detail }: { detail: ProjectDetailContent }) {
       </p>
       <div className="space-y-5">
         {detail.overview.map((paragraph) => (
-          <p key={paragraph} className="type-lead leading-relaxed text-foreground/70">
+          <p key={paragraph} className="type-lead text-foreground/70">
             {paragraph}
           </p>
         ))}
@@ -76,7 +76,7 @@ export function ProjectFeatures({ detail }: { detail: ProjectDetailContent }) {
             <h3 className="type-h4 mb-2 text-card-foreground">
               {feature.title}
             </h3>
-            <p className="type-body leading-relaxed text-foreground/60">{feature.description}</p>
+            <p className="type-body text-foreground/60">{feature.description}</p>
           </div>
         ))}
       </div>

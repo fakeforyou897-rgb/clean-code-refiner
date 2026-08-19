@@ -50,11 +50,11 @@ function AboutPage() {
               >
                 <div
                   dir="ltr"
-                  className="font-['Oswald',sans-serif] text-3xl font-bold text-card-foreground sm:text-4xl"
+                  className="type-h2 text-card-foreground"
                 >
                   {stat.value}
                 </div>
-                <div className="mt-1 font-sans text-[11px] font-black uppercase tracking-wider text-card-foreground/80">
+                <div className="mt-1 type-micro text-card-foreground/80">
                   {tr(stat.key)}
                 </div>
               </div>
@@ -65,7 +65,7 @@ function AboutPage() {
 
 
       <section className="py-12">
-        <h2 className="mb-8 text-center font-['Oswald',sans-serif] text-3xl font-bold uppercase tracking-tight text-foreground sm:text-4xl">
+        <h2 className="mb-8 text-center type-h2 text-foreground">
           {tr("about.page.approach")}
         </h2>
         <div className="grid gap-6 sm:grid-cols-2">
@@ -74,11 +74,11 @@ function AboutPage() {
               key={principle.titleKey}
               className="rounded-2xl border border-border bg-card p-8 shadow-glow"
             >
-              <h3 className="mb-3 flex items-center gap-3 font-['Oswald',sans-serif] text-2xl font-bold text-card-foreground">
+              <h3 className="mb-3 flex items-center gap-3 type-h3 text-card-foreground">
                 <CheckCircle2 className="size-5 text-primary" />
                 {tr(principle.titleKey)}
               </h3>
-              <p className="font-sans text-xs leading-relaxed text-card-foreground/85 sm:text-sm">
+              <p className="type-body text-card-foreground/85">
                 {tr(principle.bodyKey)}
               </p>
             </div>

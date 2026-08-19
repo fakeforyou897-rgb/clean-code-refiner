@@ -76,7 +76,7 @@ function ContactPage() {
               <div className="mb-4 grid size-12 place-items-center rounded-xl border border-border bg-foreground/10 text-card-foreground">
                 <Icon className="size-5 text-primary" />
               </div>
-              <span className="mb-1 font-sans text-[10px] font-black uppercase tracking-[0.2em] text-card-foreground/80">
+              <span className="mb-1 type-micro text-card-foreground/80">
                 {tr(labelKey)}
               </span>
               {href ? (
@@ -85,12 +85,12 @@ function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   dir="ltr"
-                  className="break-all font-sans text-sm font-bold text-card-foreground transition-colors hover:text-primary"
+                  className="break-all type-body font-bold text-card-foreground transition-colors hover:text-primary"
                 >
                   {value}
                 </a>
               ) : (
-                <span className="font-sans text-sm font-bold text-card-foreground">
+                <span className="type-body font-bold text-card-foreground">
                   {valueKey ? tr(valueKey) : value}
                 </span>
               )}
