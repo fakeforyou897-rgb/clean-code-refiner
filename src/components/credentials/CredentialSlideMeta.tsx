@@ -31,7 +31,7 @@ export function CredentialSlideMeta({
         <span className="pb-3 type-label text-foreground/60">
           No
         </span>
-        <span className="type-h1 relative inline-block h-[4.5rem] overflow-hidden !text-[4.5rem] leading-none">
+        <span className="type-h1 relative inline-block h-[4.5rem] overflow-hidden leading-none">
           {/* Invisible sizer keeps the animated digits from being clipped */}
           <span className="invisible block leading-none" aria-hidden="true">
             {String(total).padStart(2, "0")}

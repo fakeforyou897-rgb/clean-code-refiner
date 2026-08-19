@@ -64,10 +64,10 @@ export function ExperiencePreview() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.5, ease: EASE }}
         >
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-center tracking-tight">
+          <h2 className="type-h1 text-center">
             {tr("events.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm sm:text-base text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-center type-lead text-muted-foreground">
             {tr("events.desc")}
           </p>
         </motion.div>
@@ -91,7 +91,7 @@ export function ExperiencePreview() {
                   setActiveTab(id);
                   setOpenId(null);
                 }}
-                className={`relative inline-flex items-center gap-2 whitespace-nowrap rounded-xl px-5 py-2.5 font-sans text-xs font-black uppercase tracking-[0.18em] transition-colors ${
+                className={`relative inline-flex items-center gap-2 whitespace-nowrap rounded-xl px-5 py-2.5 type-label transition-colors ${
                   active
                     ? "text-background"
                     : "border border-border bg-foreground/5 text-foreground hover:bg-foreground/15"
@@ -133,7 +133,7 @@ export function ExperiencePreview() {
             className="flex flex-col gap-4"
           >
             {items.length === 0 && (
-              <p className="text-center text-sm text-muted-foreground">{tr("events.empty")}</p>
+              <p className="text-center type-body text-muted-foreground">{tr("events.empty")}</p>
             )}
 
             {items.map((item) => {
@@ -159,7 +159,7 @@ export function ExperiencePreview() {
                     <div className="flex items-center gap-5 sm:gap-7">
                       <span
                         dir="ltr"
-                        className="min-w-10 font-['Oswald',sans-serif] text-sm font-bold opacity-80"
+                        className="min-w-10 font-display text-sm font-bold opacity-80"
                       >
                         {item.year}
                       </span>
@@ -175,7 +175,7 @@ export function ExperiencePreview() {
                       </div>
 
                       <div className="min-w-0">
-                        <h3 className="font-['Oswald',sans-serif] text-lg sm:text-xl font-bold leading-tight tracking-tight">
+                        <h3 className="type-h4">
                           {item.title[lang]}
                         </h3>
                         <p
@@ -307,7 +307,7 @@ export function ExperiencePreview() {
         <div className="mt-10 flex justify-center">
           <Link
             to="/experience"
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-foreground/5 px-6 py-3 font-sans text-xs font-black uppercase tracking-[0.18em] transition-colors hover:bg-foreground/15"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-foreground/5 px-6 py-3 type-label transition-colors hover:bg-foreground/15"
           >
             {tr("events.cta")}
             <ArrowRight className="size-3.5 rtl:rotate-180" />

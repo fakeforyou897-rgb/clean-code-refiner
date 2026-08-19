@@ -22,11 +22,11 @@ export function AboutPreview() {
                   </div>
                 </div>
                 <div className="grid place-items-center rounded-[6px] bg-foreground px-2.5 py-0.5 shadow-sm">
-                  <span className="font-['Oswald',sans-serif] text-sm font-bold text-background">
+                  <span className="font-display text-sm font-bold text-background">
                     MS
                   </span>
                 </div>
-                <div className="flex flex-col text-start font-sans text-[9px] font-black tracking-[0.2em] text-foreground leading-tight uppercase">
+                <div className="flex flex-col text-start type-micro text-foreground">
                   <span>MOSTAFA</span>
                   <span>SAMIR</span>
                 </div>
@@ -35,11 +35,11 @@ export function AboutPreview() {
               {/* Headline */}
               <PenTyping
                 lines={["4+ Years of", "Full Stack Excellence"]}
-                className="font-['Caveat',cursive] text-4xl sm:text-5xl lg:text-6xl font-bold text-card-foreground leading-[1.1] mb-4"
+                className="type-script text-card-foreground mb-4"
               />
 
               {/* Description */}
-              <p className="font-sans text-xs sm:text-sm text-card-foreground/85 leading-relaxed mb-6 max-w-sm">
+              <p className="type-body text-card-foreground/85 mb-6 max-w-sm">
                 Senior Full Stack Engineer specializing in scaling marketplace throughput by 300%
                 using .NET 8, Clean Architecture & Next.js.
               </p>
@@ -50,7 +50,7 @@ export function AboutPreview() {
                   to="/about"
                   className="group inline-flex items-center justify-center gap-3 rounded-xl bg-primary px-6 py-3 text-primary-foreground shadow-md transition-transform hover:scale-105"
                 >
-                  <span className="font-sans text-xs font-black tracking-[0.2em] uppercase">
+                  <span className="type-label">
                     ABOUT ME
                   </span>
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 rtl:rotate-180" />
@@ -59,7 +59,7 @@ export function AboutPreview() {
                   to="/projects"
                   className="group inline-flex items-center justify-center gap-3 rounded-xl bg-background px-6 py-3 shadow-md border border-border transition-transform hover:scale-105"
                 >
-                  <span className="font-sans text-xs font-black tracking-[0.2em] text-foreground uppercase">
+                  <span className="type-label text-foreground">
                     VIEW CASES
                   </span>
                   <ArrowRight className="size-4 text-foreground transition-transform group-hover:translate-x-1 rtl:rotate-180" />
