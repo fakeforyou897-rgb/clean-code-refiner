@@ -63,7 +63,7 @@ export const projects: Project[] = [
     type: "Freelance",
     tech: ["React", "PostgreSQL"],
     database: "PostgreSQL",
-    live: "https://ohanna-landing-page.vercel.app/",
+    live: "https://ohanna-api-73.vercel.app/",
     image: "/projects/react/ohanna.png",
     gradient: "linear-gradient(135deg, oklch(0.65 0.17 145), oklch(0.55 0.14 110))",
   },

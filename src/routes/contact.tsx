@@ -1,77 +1,105 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, Clock } from "lucide-react";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { PageHeader } from "@/components/ui/PageHeader";
-import { Reveal } from "@/components/ui/Reveal";
-import { Contact } from "@/components/sections/Contact";
+import { Mail, MapPin, Phone, type LucideIcon } from "lucide-react";
 import { PageSkeleton } from "@/components/ui/Skeletons";
+import { PageShell } from "@/components/layout/PageShell";
+import { PageIntro } from "@/components/ui/PageIntro";
+import { Contact } from "@/components/sections/Contact";
+import { LottieIcon } from "@/components/ui/LottieIcon";
+import { pageSeo, pageTitle } from "@/lib/seo";
+import { useI18n } from "@/lib/i18n";
 
-const channels = [
-  { Icon: Mail, label: "Email", value: "hello@example.com", href: "mailto:hello@example.com" },
-  { Icon: MapPin, label: "Based in", value: "Cairo · Remote worldwide" },
-  { Icon: Clock, label: "Response time", value: "Within 24 hours" },
+
+interface ContactChannel {
+  Icon: LucideIcon;
+  labelKey: string;
+  value?: string;
+  valueKey?: string;
+  href?: string;
+}
+
+const CHANNELS: ContactChannel[] = [
+  {
+    Icon: Mail,
+    labelKey: "contact.channel.email",
+    value: "m.ssaid356@gmail.com",
+    href: "mailto:m.ssaid356@gmail.com",
+  },
+  {
+    Icon: Phone,
+    labelKey: "contact.channel.phone",
+    value: "+20 106 735 8073",
+    href: "https://wa.me/+201067358073",
+  },
+  {
+    Icon: MapPin,
+    labelKey: "contact.channel.location",
+    valueKey: "contact.channel.locationValue",
+  },
 ];
 
+const DESCRIPTION =
+  "Get in touch with Mostafa Samir for marketplace engineering, .NET 8 Microservices, or full-stack web applications.";
+
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Start a Marketplace Project" },
-      {
-        name: "description",
-        content:
-          "Tell me about your marketplace, platform or commerce system and I'll come back with a concrete plan within 24 hours.",
-      },
-      { property: "og:title", content: "Contact — Start a Marketplace Project" },
-      {
-        property: "og:description",
-        content: "Send a brief and get a concrete architecture and delivery plan back.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/contact" }],
-  }),
-  component: ContactPage,
+  head: () => pageSeo({ title: pageTitle("Contact"), description: DESCRIPTION, path: "/contact" }),
   pendingComponent: PageSkeleton,
+  component: ContactPage,
 });
 
 function ContactPage() {
+  const { tr } = useI18n();
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <main>
-        <PageHeader
-          kicker="Available for new work"
-          title="Get in Touch"
-          subtitle="Share the scope, the stack and the timeline — you'll get an honest answer, not a sales pitch."
+    <PageShell>
+      <PageIntro
+        eyebrow={tr("contact.page.eyebrow")}
+        title={tr("contact.page.title")}
+        description={tr("contact.page.desc")}
+      />
+
+      <div className="mb-2 flex justify-center">
+        <LottieIcon
+          src="/lottie/contact-mail.lottie"
+          className="size-40 sm:size-52"
+          fallback={<Mail className="size-16 text-primary/60" />}
         />
+      </div>
 
-        <section className="px-5 pb-4">
-          <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-3">
-            {channels.map(({ Icon, label, value, href }, i) => (
-              <Reveal key={label} delay={i * 0.07}>
-                <div className="glass h-full rounded-2xl p-6">
-                  <Icon className="size-5 text-accent" />
-                  <div className="mt-4 text-[11px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
-                    {label}
-                  </div>
-                  {href ? (
-                    <a href={href} className="mt-1 block font-semibold hover:text-accent">
-                      {value}
-                    </a>
-                  ) : (
-                    <div className="mt-1 font-semibold">{value}</div>
-                  )}
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </section>
 
-        <Contact showHeading={false} />
-      </main>
-      <Footer />
-    </div>
+      <section className="mb-8 py-6">
+        <div className="grid gap-6 sm:grid-cols-3">
+          {CHANNELS.map(({ Icon, labelKey, value, valueKey, href }) => (
+            <div
+              key={labelKey}
+              className="flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-7 text-center shadow-lg transition-transform hover:-translate-y-1"
+            >
+              <div className="mb-4 grid size-12 place-items-center rounded-xl border border-border bg-foreground/10 text-card-foreground">
+                <Icon className="size-5 text-primary" />
+              </div>
+              <span className="mb-1 font-sans text-[10px] font-black uppercase tracking-[0.2em] text-card-foreground/80">
+                {tr(labelKey)}
+              </span>
+              {href ? (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  dir="ltr"
+                  className="break-all font-sans text-sm font-bold text-card-foreground transition-colors hover:text-primary"
+                >
+                  {value}
+                </a>
+              ) : (
+                <span className="font-sans text-sm font-bold text-card-foreground">
+                  {valueKey ? tr(valueKey) : value}
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Contact showHeading={false} />
+    </PageShell>
   );
 }
