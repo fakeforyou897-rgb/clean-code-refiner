@@ -1,178 +1,142 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { projects, projectFilters, type Project } from "@/data";
-import { useI18n } from "@/lib/i18n";
+import { Code2, ExternalLink, Rocket } from "lucide-react";
+import { projects } from "@/data";
 import { SmartImage } from "@/components/ui/SmartImage";
-import { IMAGE_SIZES } from "@/lib/image";
-
-function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
-  return (
-    <motion.article
-      layout
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.96 }}
-      transition={{ duration: 0.4 }}
-      className="group card-lift flex flex-col overflow-hidden rounded-[1.75rem] border border-border bg-secondary/50 p-3"
-    >
-      {/* Image Header or Gradient Fallback */}
-      <div className="mb-4 flex items-center justify-between px-3 pt-2">
-        <span className="font-display text-sm font-black text-accent">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted-foreground">
-          {project.category}
-        </span>
-      </div>
-      <div className="relative h-44 overflow-hidden rounded-2xl">
-        <SmartImage
-          src={project.image}
-          alt={`${project.title} preview`}
-          width={384}
-          height={176}
-          sizes={IMAGE_SIZES.card}
-          priority={index < 3}
-          fallbackStyle={project.gradient}
-          className="size-full"
-          imgClassName="transition-transform duration-300 group-hover:scale-105"
-        />
-
-        <div className="absolute inset-0 bg-overlay/25 transition-opacity group-hover:opacity-0" />
-        <span className="absolute left-4 top-4 rounded-full bg-overlay/50 px-3 py-1 text-xs font-semibold text-overlay-foreground backdrop-blur">
-          {project.category}
-        </span>
-        <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-overlay-foreground drop-shadow">
-          {project.title}
-        </h3>
-      </div>
-
-      <div className="flex flex-1 flex-col p-6">
-        <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
-
-        {/* Project Type & Client Info */}
-        <div className="my-4 flex flex-wrap gap-2">
-          <span className="chip">
-            {project.type}
-          </span>
-          {project.client && (
-            <span className="chip">
-              {project.client}
-            </span>
-          )}
-          {project.database && (
-            <span className="inline-block rounded-full bg-secondary/40 px-2.5 py-1 text-xs font-semibold text-muted-foreground border border-border">
-              {project.database}
-            </span>
-          )}
-          {project.status && (
-            <span className="inline-block rounded-full bg-success/10 px-2.5 py-1 text-xs font-semibold text-success border border-success/20">
-              {project.status}
-            </span>
-          )}
-        </div>
-
-        {/* Metrics - Only if available */}
-        {project.metrics && project.metrics.length > 0 && (
-          <div className="my-5 grid grid-cols-3 gap-2 border-y border-border py-4">
-            {project.metrics.map((m) => (
-              <div key={m.label} className="text-center">
-                <div className="text-lg font-extrabold text-accent">{m.value}</div>
-                <div className="text-[11px] uppercase tracking-wide text-muted-foreground">
-                  {m.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Tech Stack */}
-        <div className="mb-5 flex flex-wrap gap-2">
-          {project.tech.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-md bg-background/50 px-2 py-1 text-xs text-muted-foreground"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        {/* Badges */}
-        {project.badges && project.badges.length > 0 && (
-          <div className="mb-4 flex flex-wrap gap-2">
-            {project.badges.map((badge) => (
-              <span
-                key={badge}
-                className="rounded-md bg-accent/10 px-2 py-1 text-xs font-semibold text-accent border border-accent/30"
-              >
-                {badge}
-              </span>
-            ))}
-          </div>
-        )}
-
-        {/* Links */}
-        <div className="mt-auto flex gap-3">
-          {project.live !== "#" && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
-            >
-              <ExternalLink className="size-4" /> Live
-            </a>
-          )}
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-foreground"
-            >
-              <Github className="size-4" /> Code
-            </a>
-          )}
-        </div>
-      </div>
-    </motion.article>
-  );
-}
+import { useI18n } from "@/lib/i18n";
+import { useLocalizedContent } from "@/lib/localize";
 
 export function Projects() {
   const { tr } = useI18n();
+  const { projectTitle, projectDescription, category, projectType } = useLocalizedContent();
+  // Grab the first 3 projects as featured for the homepage
+  const featuredWorks = projects.slice(0, 3);
 
-  // Show only last 3 projects on home page
-  const latestProjects = projects.slice(-3).reverse();
+  // Assign icons based on index for some variety
+  const icons = [Rocket, Code2, ExternalLink];
 
   return (
-    <section id="projects" className="scroll-mt-24 py-28">
-      <div className="mx-auto max-w-6xl px-5">
-        <SectionHeading title={tr("projects.title")} />
+    <section
+      id="works"
+      className="w-full bg-background py-16 px-4 sm:px-8 md:px-12 text-foreground select-none"
+    >
+      <div className="mx-auto max-w-6xl">
+        <h2 className="mb-8 font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-foreground text-center md:text-start">
+          {tr("works.title")}
+        </h2>
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
+          {featuredWorks.map((project, index) => {
+            const num = `0${index + 1}`;
+            const Icon = icons[index % icons.length] ?? Rocket;
+            const tags = project.tech.slice(0, 3);
 
-        <motion.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
-          <AnimatePresence mode="popLayout">
-            {latestProjects.map((p, idx) => (
-              <ProjectCard key={p.title} project={p} index={idx} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+            return (
+              <Reveal
+                key={project.id}
+                delay={index * 0.1}
+                className="relative flex flex-col justify-between rounded-2xl bg-card p-7 border border-border shadow-glow group hover:-translate-y-2 transition-all duration-300"
+              >
+                <div>
+                  {/* Header Row */}
+                  <div className="flex items-center justify-between mb-4 px-1">
+                    <div>
+                      <span className="font-display text-2xl font-bold text-card-foreground leading-none block">
+                        {num}
+                      </span>
+                      <span className="font-sans text-[10px] font-black tracking-[0.2em] text-card-foreground/80 uppercase">
+                        {category(project.category)}
+                      </span>
+                    </div>
+                    <div className="grid size-9 place-items-center rounded-xl bg-foreground/10 border border-border text-card-foreground">
+                      <Icon className="size-4 text-primary" />
+                    </div>
+                  </div>
 
-        {/* View All Button */}
-        <Reveal className="flex justify-center">
-          <Link
-            to="/projects"
-            className="group flex items-center gap-2.5 rounded-full bg-accent px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-accent-foreground transition-transform duration-300 hover:scale-105"
-          >
-            View All Projects
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </Reveal>
+                  {/* Card Artwork Image Container */}
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl mb-5 shadow-[0_10px_25px_rgba(0,0,0,0.25)] border border-border group-hover:border-border/60 transition-colors">
+                    <SmartImage
+                      src={project.image}
+                      alt={projectTitle(project)}
+                      fallbackStyle={project.gradient}
+                      className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
+                    {/* Dark Vignette Overlay for Depth */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+
+                    {/* Top-Right Badge Overlay */}
+                    <div className="absolute top-3 end-3 rounded-xl bg-black/40 backdrop-blur-md px-3 py-1 text-[9px] font-black tracking-wider text-white border border-white/20 uppercase">
+                      {projectType(project.type)}
+                    </div>
+                  </div>
+
+                  {/* Card Title & Subtitle */}
+                  <h3 className="font-display text-2xl font-bold text-card-foreground leading-tight mb-2 px-1 line-clamp-1">
+                    {projectTitle(project)}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="font-sans text-xs text-card-foreground/85 leading-relaxed mb-4 px-1 line-clamp-3">
+                    {projectDescription(project)}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6 px-1">
+                    {tags.map((t) => (
+                      <span
+                        key={t}
+                        dir="ltr"
+                        className="keep-latin rounded-xl bg-primary/10 border border-primary/20 px-3 py-1 text-[9px] font-black tracking-widest text-primary uppercase shadow-sm"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                    {project.tech.length > 3 && (
+                      <span className="rounded-xl bg-foreground/5 border border-border px-2 py-1 text-[9px] font-black tracking-widest text-foreground uppercase shadow-sm">
+                        +{project.tech.length - 3}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Bottom Action */}
+                <div className="mt-auto pt-4 px-1">
+                  <Link
+                    to="/projects/$id"
+                    params={{ id: project.id }}
+                    className="inline-flex items-center gap-3 rounded-xl bg-background px-6 py-3 shadow-md border border-border transition-transform hover:scale-105 w-full justify-center group/btn"
+                  >
+                    <span className="font-sans text-[10px] font-black tracking-[0.2em] text-foreground uppercase group-hover/btn:text-primary transition-colors">
+                      {tr("projects.preview.view")}
+                    </span>
+                    <ArrowRightIcon className="size-3 text-foreground group-hover/btn:text-primary transition-colors group-hover/btn:translate-x-1 rtl:rotate-180" />
+                  </Link>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
       </div>
     </section>
+  );
+}
+
+// Arrow helper icon
+function ArrowRightIcon(props: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
   );
 }
