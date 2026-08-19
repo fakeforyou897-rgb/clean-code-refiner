@@ -110,7 +110,7 @@ function BriefRow({
         <div className="type-micro mb-0.5 text-muted-foreground">
           {label}
         </div>
-        <div className="type-body font-bold leading-snug text-foreground">{children}</div>
+        <div className="type-body font-bold text-foreground">{children}</div>
       </div>
     </div>
   );
